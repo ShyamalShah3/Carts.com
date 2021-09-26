@@ -8,6 +8,11 @@ import { SummaryPageComponent } from './components/summary/summary-page.componen
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { FiltersComponent } from './components/shopping-cart/filters/filters.component';
+import { ItemsComponent } from './components/shopping-cart/items/items.component';
+import { CartComponent } from './components/shopping-cart/cart/cart.component';
+import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
 
 
 
@@ -19,6 +24,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SummaryPageComponent,
     HeaderComponent,
     FooterComponent,
+    ShoppingCartComponent,
+    FiltersComponent,
+    ItemsComponent,
+    CartComponent,
+    CartItemComponent,
 
 
   ],
