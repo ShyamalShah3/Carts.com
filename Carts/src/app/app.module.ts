@@ -13,6 +13,7 @@ import { FiltersComponent } from './components/shopping-cart/filters/filters.com
 import { ItemsComponent } from './components/shopping-cart/items/items.component';
 import { CartComponent } from './components/shopping-cart/cart/cart.component';
 import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
+import { ItemComponent } from './components/shopping-cart/items/item/item.component';
 
 
 
@@ -29,6 +30,7 @@ import { CartItemComponent } from './components/shopping-cart/cart/cart-item/car
     ItemsComponent,
     CartComponent,
     CartItemComponent,
+    ItemComponent,
 
 
   ],
