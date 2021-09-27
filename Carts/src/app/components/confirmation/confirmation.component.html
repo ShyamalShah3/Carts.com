@@ -3,7 +3,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="invoice p-5">
-                    <h5>Your order is Confirmed!</h5> <span class="font-weight-bold d-block mt-4">Hello, {{this.myPayment?.getCardName}}</span> <span>You order has been confirmed and will be shipped in next two days!</span>
+                    <h5>Your order is Confirmed!</h5> <span class="font-weight-bold d-block mt-4">Hello, {{this.myPayment?.getCardName}}</span> <span>You order has been confirmed and will be shipped within the next two days!</span>
                     <div class="payment border-top mt-3 mb-3 border-bottom table-responsive">
                         <table class="table table-borderless">
                             <tbody>
@@ -64,7 +64,7 @@
                             </table>
                         </div>
                     </div>
-                    <p>We will be sending shipping confirmation email when the item shipped successfully!</p>
+                    <p>An order confirmation email will be sent to {{this.myShipping?.emailAddress}}shortly.</p>
                     <p class="font-weight-bold mb-0">Thanks for shopping with us!</p> <span>Carts.com</span>
                 </div>
                 <!-- Add Return to Catalog Button-->
