@@ -30,7 +30,5 @@ export class PaymentPageComponent implements OnInit {
 
     console.log(this.myPayData.pInfo.getCVV);
   }
-  btnCheckOutClick(){
-    this.router.navigateByUrl('/summary');
-  }
+ 
 }

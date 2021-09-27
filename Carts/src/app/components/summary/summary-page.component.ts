@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PaymentInfoService } from 'src/app/services/payment.service';
+import { Component, OnInit,Input } from '@angular/core';
 import { paymentInfo } from 'src/app/models/paymentInfo';
+import { PaymentInfoService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-summary-page',
@@ -8,12 +8,13 @@ import { paymentInfo } from 'src/app/models/paymentInfo';
   styleUrls: ['./summary-page.component.css']
 })
 export class SummaryPageComponent implements OnInit {
-   myPayment: paymentInfo;
-  constructor(private pis: PaymentInfoService) {
-    this.myPayment=pis.pInfo;
+  @Input() myPayment!: PaymentInfoService;
+  constructor(){
+    
    }
 
   ngOnInit(): void {
+    console.log(this.myPayment.pInfo.CVV);
   }
 
 }
