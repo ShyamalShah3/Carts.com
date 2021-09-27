@@ -44,6 +44,7 @@ export class CartComponent implements OnInit {
 
   goToCart() {
     this.ctcServe.cartItems = this.cartItems;
+    this.ctcServe.total = this.cartTotal;
   }
 
 }
