@@ -1,16 +1,15 @@
 <h1 class = "fs-1">SUMMARY</h1>
 <h2 class = 'fw-normal fs-4'>Shipping Information</h2>
-<p>Name</p>
-<p>Home Adress</p>
-<p>Email Adress</p>
-<p>Phone Number</p>
+<p>{{this.myShipping?.streetAddress}}</p>
+<p>{{this.myShipping?.id}}</p>
+<p>{{this.myShipping?.zipCode}}</p>
 <h3 class = 'fw-normal fs-4'>Shopping Information</h3>
 <p>1 cart</p>
 <p>Total: $45</p>
 <h4 class = 'fw-normal fs-4'>Payment Information</h4>
-<p></p>
-<p>Card Number: xxxx xxxx 1234</p>
-<p>Exp: xx/xx</p>
+<p>{{this.myPayment?.getCardName}}</p>
+<p>{{this.myPayment?.cardNumber}}</p>
+<p>{{this.myPayment?.getExpD}}</p>
 <a routerLink="/payment"><button type="button" class="btn btn-outline-primary me-3">Back</button></a>
 <div class="divider"></div>
 <button type="button" class="btn btn-primary">Purchase</button>

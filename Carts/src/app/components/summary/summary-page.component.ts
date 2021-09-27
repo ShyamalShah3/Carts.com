@@ -10,9 +10,11 @@ import { PaymentInfoService } from 'src/app/services/payment.service';
 })
 export class SummaryPageComponent implements OnInit {
  myPayment : paymentInfo |undefined;
-  constructor(private pis:PaymentInfoService){
+ myShipping : ShippingInfo |undefined;
+  constructor(private pis:PaymentInfoService, private sis:ShippingInfoService){
     this.myPayment=pis.pInfo;
-    console.log(this.pis.pInfo?.CVV);
+    this.myShipping=sis.shippingInfo;
+    //console.log(this.myShipping?.emailAddress);
   }
 
   ngOnInit(): void {
