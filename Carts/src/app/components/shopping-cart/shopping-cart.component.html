@@ -1,0 +1,32 @@
+<h1 class="mb-3">Shopping Cart</h1>
+<div class="container">
+    <div class="row" *ngIf="cartItems.length == 0"; then cartEmpty else cartNonEmpty>
+        <ng-template #cartEmpty>
+            <p>Your cart is currently empty.</p>
+            <img src="https://i.pinimg.com/originals/3b/b9/f7/3bb9f72e54bc3c36babab1ca38a8ec25.jpg">            
+        </ng-template>
+        <ng-template #cartNonEmpty>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of cartItems">
+                    <app-cart-item [cartItem]="item"></app-cart-item>
+                </li>
+                <li class="list-group-item active">
+                    <strong>Total: </strong>{{cartTotal | currency:'USD' }}
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</div>
+
+<hr class="my-4">
+<button type="button" class="btn btn-outline-primary me-3">Back</button>
+<div class="divider"></div>
+
+<div class="row" *ngIf="cartItems.length == 0"; then cartEmpty else cartNonEmpty> <!-- Checkout button will be disabled if the cart is empty. -->
+    <ng-template #cartEmpty>    
+        <button type="button" class="btn btn-primary" disabled>Checkout</button>
+    </ng-template>
+    <ng-template #cartNonEmpty>
+        <button type="button" class="btn btn-primary">Checkout</button>
+    </ng-template>
+</div>
