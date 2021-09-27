@@ -7,7 +7,7 @@ import { PaymentPageComponent } from './components/payment/payment-page.componen
 import { SummaryPageComponent } from './components/summary/summary-page.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { FiltersComponent } from './components/catalog/filters/filters.component';
 import { ItemsComponent } from './components/catalog/items/items.component';
@@ -15,7 +15,7 @@ import { CartComponent } from './components/catalog/cart/cart.component';
 import { CartItemComponent } from './components/catalog/cart/cart-item/cart-item.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { ItemComponent } from './components/catalog/items/item/item.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -39,7 +39,8 @@ import { ItemComponent } from './components/catalog/items/item/item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

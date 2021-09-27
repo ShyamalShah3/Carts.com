@@ -5,15 +5,15 @@ import { ShippingInfo } from 'src/app/models/shipping-info';
   providedIn: 'root'
 })
 export class ShippingInfoService {
-  private mShippingInfo:(ShippingInfo | null) = null;
+  private mShippingInfo: ShippingInfo | undefined;
 
   constructor() { }
 
-  public get shippingInfo() : (ShippingInfo | null) {
+  public get shippingInfo() : ShippingInfo | undefined {
     return this.mShippingInfo;
   }
 
-  public set shippingInfo(shippingInfo:(ShippingInfo | null)) {
+  public set shippingInfo(shippingInfo:ShippingInfo | undefined) {
     this.mShippingInfo = shippingInfo;
   }
   

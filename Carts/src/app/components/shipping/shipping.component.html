@@ -5,7 +5,7 @@
     <div class="row gy-3">
         <div class="col">
           <label for="ship-street-address" class="form-label">Street Address</label>
-          <input type="text" class="form-control" id="ship-street-address" placeholder="" [(ngModel)]="ship-street-address-id" required>
+          <input type="text" class="form-control" id="ship-street-address" placeholder="" [(ngModel)]="shipStreetAddress" required>
           <div class="invalid-feedback">
             Shipping Street Address is required
           </div>
@@ -13,7 +13,7 @@
       
         <div class="col">
           <label for="ship-city" class="form-label">City</label>
-          <input type="text" class="form-control" id="ship-city" placeholder="" [(ngModel)]="ship-city-id" required>
+          <input type="text" class="form-control" id="ship-city" placeholder="" [(ngModel)]="shipCity" required>
           <div class="invalid-feedback">
             Shipping City is required
           </div>
@@ -21,7 +21,7 @@
       
         <div class="col">
           <label for="ship-zip-code" class="form-label">Zip/Postal Code</label>
-          <input type="text" class="form-control" id="ship-zip-code" placeholder="" [(ngModel)]="ship-zip-code-id" required>
+          <input type="text" class="form-control" id="ship-zip-code" placeholder="" [(ngModel)]="shipZipCode" required>
           <div class="invalid-feedback">
             Shipping Zip/Postal Code is required
           </div>
@@ -30,7 +30,7 @@
     <div class="row gy-3">
         <div class="col">
           <label for="ship-state" class="form-label">State/Province/Region</label>
-          <input type="text" class="form-control" id="ship-state" placeholder="" [(ngModel)]="ship-state-id" required>
+          <input type="text" class="form-control" id="ship-state" placeholder="" [(ngModel)]="shipState" required>
           <div class="invalid-feedback">
             Shipping State/Province/Region is required
           </div>
@@ -38,7 +38,7 @@
       
         <div class="col">
           <label for="ship-country" class="form-label">Country</label>
-          <input type="text" class="form-control" id="ship-country" placeholder="" [(ngModel)]="ship-country-id" required>
+          <input type="text" class="form-control" id="ship-country" placeholder="" [(ngModel)]="shipCountry" required>
           <div class="invalid-feedback">
             Shipping Country is required
           </div>
@@ -66,7 +66,7 @@
 
     <div class="row gy-3">
         <label for="ship-email" class="form-label">Email</label>
-        <input type="text" class="form-control" id="ship-email" placeholder="" [(ngModel)]="ship-email-id" required>
+        <input type="text" class="form-control" id="ship-email" placeholder="" [(ngModel)]="shipEmail" required>
         <div class="invalid-feedback">
           Email is required for confirmation
         </div>
@@ -77,4 +77,4 @@
 <hr class="my-4">
 <button type="button" class="btn btn-outline-primary me-3">Cancel</button>
 <div class="divider"></div>
-<button (click)="packageShippingInfo(ship-street-address-id, ship-city-id, ship-zip-code-id, ship-state-id, ship-country-id, ship-email-id)" type="button" class="btn btn-primary">Next</button>
+<button (click)="packageShippingInfo()" type="button" class="btn btn-primary">Next</button>
