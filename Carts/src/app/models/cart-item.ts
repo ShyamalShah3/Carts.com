@@ -1,4 +1,4 @@
-export class CartList {
+export class CartItem {
     id: number;
     productId: number;
     name: string;
