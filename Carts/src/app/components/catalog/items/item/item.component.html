@@ -1,5 +1,5 @@
-<div class="card shadow-sm">
-    <img class="bd-placeholder-img card-img-top" width="100%" [src]="productItem.imageUrl"  />
+<div class="card custom-card shadow-sm">
+    <img class="bd-placeholder-img card-img-top" width="200px" height="300px" [src]="productItem.imageUrl"  />
     <div class="card-body">
         <p class="card-name">
             <strong>{{ productItem.name }}</strong>
@@ -13,7 +13,13 @@
                 <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">
                     Add to Cart
                 </button>
-                <button type="button" class="btn btn-sm btn-outline-secondary product-btn">View Details</button>
+            </div>
+            <div class="col-md-3 mb-3 btn-sm quantity-custom">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control custom" id="quantity" placeholder="0" min="0" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
             </div>
         </div>
     </div>

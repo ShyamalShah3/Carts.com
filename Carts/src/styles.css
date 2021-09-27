@@ -6,11 +6,24 @@
     font-size: small;
 }
 
+.custom-card {
+    width: 18rem;
+    height: 36rem;
+}
+
+.quantity-custom {
+    width: 75px;
+}
+
 .card-header {
     text-align: center;
 }
 
-.card, .form-control, .btn {
+.card-name, .card-text {
+    text-align: center;
+}
+
+.card, .form-control, .btn, .col-md-3{
     border-radius: 0;
 }
 
@@ -26,4 +39,8 @@
 .list-group-item:last-child{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+.total-custom {
+    font-size: small;
 }

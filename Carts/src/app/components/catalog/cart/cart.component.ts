@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessengerService } from 'src/app/services/messenger.service';
 import { CartItem } from 'src/app/models/cart-item';
 import { Product } from 'src/app/models/product';
+import { CatalogToCartService } from 'src/app/services/catalog-to-cart.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Product } from 'src/app/models/product';
 export class CartComponent implements OnInit {
 
   cartItems: CartItem[] = [];
-  cartTotal = 0
+  cartTotal = 0;
 
   constructor(private msg: MessengerService) { }
 
@@ -39,6 +40,10 @@ export class CartComponent implements OnInit {
       })
     }
     
+  }
+
+  goToCart() {
+    let cartData = new CatalogToCartService(this.cartItems);
   }
 
 }
