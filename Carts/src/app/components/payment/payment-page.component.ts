@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Payment } from 'src/app/models/payment';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-payment-page',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentPageComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private paymentService:PaymentService) { }
+  
   ngOnInit(): void {
+   this.paymentService.getPayment();
+   console.log(this.paymentService.Payment.CVV);
+   
   }
 
 }
