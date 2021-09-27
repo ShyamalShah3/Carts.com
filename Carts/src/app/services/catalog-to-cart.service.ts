@@ -5,14 +5,17 @@ import { CartItem } from '../models/cart-item';
   providedIn: 'root'
 })
 export class CatalogToCartService {
+  private mCartItems: CartItem[] = [];
 
-  cartItems: CartItem[] = [];
-
-  constructor(cartItems: CartItem[]) {
-    this.cartItems = cartItems;
+  constructor() {
   }
 
-  getCartItems(){
-    return this.cartItems;
-  }
+ public get cartItems() : CartItem[] {
+    return this.mCartItems;
+ }
+
+ public set cartItems(cartItems:CartItem[]) {
+   this.mCartItems = cartItems;
+ }
+
 }

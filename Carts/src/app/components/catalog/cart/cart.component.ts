@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   cartTotal = 0;
 
-  constructor(private msg: MessengerService) { }
+  constructor(private msg: MessengerService, private ctcServe:CatalogToCartService) { }
 
   ngOnInit(): void {
     this.msg.getMsg().subscribe((product: any)  => {this.addProductToCart(product)});
@@ -43,7 +43,7 @@ export class CartComponent implements OnInit {
   }
 
   goToCart() {
-    let cartData = new CatalogToCartService(this.cartItems);
+    this.ctcServe.cartItems = this.cartItems;
   }
 
 }
