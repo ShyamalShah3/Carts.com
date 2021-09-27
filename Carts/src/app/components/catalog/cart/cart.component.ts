@@ -40,6 +40,7 @@ export class CartComponent implements OnInit {
       })
     }
     
+    this.goToCart();
   }
 
   goToCart() {
