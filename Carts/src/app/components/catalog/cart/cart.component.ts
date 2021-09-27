@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MessengerService } from 'src/app/services/messenger.service';
+import { CartList } from 'src/app/models/cart-list';
+
 
 @Component({
   selector: 'app-cart',
@@ -7,20 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  cartItems = [
-    {id: 1, productId: 1, name: "Test 1", qty: 2, price: 100},
-    {id: 2, productId: 2, name: "Test 2", qty: 1, price: 50},
-    {id: 3, productId: 3, name: "Test 3", qty: 10, price: 1000}
-  ];
-
+  cartItems: CartList[] = [];
   cartTotal = 0
 
-  constructor() { }
+  constructor(private msg: MessengerService) { }
 
   ngOnInit(): void {
-    this.cartItems.forEach(item=> {
-      this.cartTotal += (item.qty * item.price)
-    })
+    this.msg.getMsg().subscribe((product: any)  => {
+      this.cartItems.push(new CartList(1, product.id, product.name, 1, product.price));
+      this.cartTotal = 0;
+      this.cartItems.forEach(item => {
+        this.cartTotal += (item.qty * item.price);
+      })
+    });
   }
 
 }

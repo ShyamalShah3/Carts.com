@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 export class Product {
     id: number;
     name: string;
