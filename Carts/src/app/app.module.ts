@@ -18,7 +18,6 @@ import { ItemComponent } from './components/catalog/items/item/item.component';
 import { FormsModule } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers:[],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

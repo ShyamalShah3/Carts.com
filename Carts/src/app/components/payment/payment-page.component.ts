@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { paymentInfo } from 'src/app/models/paymentInfo';
 import { PaymentInfoService } from 'src/app/services/payment.service';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,25 +10,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment-page.component.css']
 })
 export class PaymentPageComponent implements OnInit {
-  myPayData:PaymentInfoService= new PaymentInfoService(new paymentInfo);
-  constructor(private router: Router) {
+ 
+  @Input('ngModel') cardName: string | undefined;
+  @Input('ngModel') cardNum: string | undefined;
+  @Input('ngModel') expDate: string | undefined;
+  @Input('ngModel') CVV: string | undefined;
+ 
+
+  constructor(private service: PaymentInfoService) {
    }
 
   ngOnInit(): void {
     
      }
   getPayment(){
-    var name = (<HTMLInputElement>document.getElementById("cc-name")).value;
+   
+    this.service.pInfo =new paymentInfo( this.cardName ,this.cardNum, this.expDate ,this.CVV);
 
-    var number = (<HTMLInputElement>document.getElementById("cc-number")).value;
-  
-    var expD = (<HTMLInputElement>document.getElementById("cc-expiration")).value;
-  
-    var cvv = (<HTMLInputElement>document.getElementById("cc-cvv")).value;
-
-    this.myPayData=new PaymentInfoService(new paymentInfo(name,number,expD,cvv));
-
-    console.log(this.myPayData.pInfo.getCVV);
+    //console.log(this.myPayData.pInfo.getCVV);
   }
  
 }

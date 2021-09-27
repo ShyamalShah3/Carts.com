@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ShippingInfo } from 'src/app/models/shipping-info';
 import { ShippingInfoService } from 'src/app/services/shipping-info.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-shipping',
