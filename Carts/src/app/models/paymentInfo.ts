@@ -9,16 +9,16 @@ export class paymentInfo {
         this.expDate = expDate;
         this.CVV=CVV;
     }
-    public get cardName(): string{
+    public get getCardName(): string{
         return this.nameOnCard;
     }
-    public get cardNum(): string{
+    public get getCardNum(): string{
         return this.cardNumber;
     }
-    public get expD(): string{
+    public get getExpD(): string{
         return this.expDate;
     }
-    public get cvv(): string{
+    public get getCVV(): string{
         return this.CVV;
     }
 }

@@ -9,11 +9,24 @@ import { PaymentInfoService } from 'src/app/services/payment.service';
   styleUrls: ['./payment-page.component.css']
 })
 export class PaymentPageComponent implements OnInit {
-
-
-  constructor() { }
+  myPayData:PaymentInfoService= new PaymentInfoService(new paymentInfo);
+  constructor() {
+   }
 
   ngOnInit(): void {
-  }
+    
+     }
+  getPayment(){
+    var name = (<HTMLInputElement>document.getElementById("cc-name")).value;
 
+    var number = (<HTMLInputElement>document.getElementById("cc-number")).value;
+  
+    var expD = (<HTMLInputElement>document.getElementById("cc-expiration")).value;
+  
+    var cvv = (<HTMLInputElement>document.getElementById("cc-cvv")).value;
+
+    this.myPayData=new PaymentInfoService(new paymentInfo(name,number,expD,cvv));
+
+    console.log(this.myPayData.pInfo.getCVV);
+  }
 }

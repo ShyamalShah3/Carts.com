@@ -6,14 +6,14 @@ import { paymentInfo } from 'src/app/models/paymentInfo';
 })
 
 export class PaymentInfoService {
-  private mP:paymentInfo;
+  private myPayment:paymentInfo;
 
   constructor(p:paymentInfo) { 
-    this.mP = p;
+    this.myPayment = p;
   }
 
-  public get shippingInfo() : paymentInfo {
-    return this.mP;
+  public get pInfo() : paymentInfo {
+    return this.myPayment;
   }
   
 }
