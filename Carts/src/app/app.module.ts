@@ -14,6 +14,7 @@ import { ItemsComponent } from './components/catalog/items/items.component';
 import { CartComponent } from './components/catalog/cart/cart.component';
 import { CartItemComponent } from './components/catalog/cart/cart-item/cart-item.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
+import { ItemComponent } from './components/catalog/items/item/item.component';
 
 
 
@@ -30,7 +31,7 @@ import { ShippingComponent } from './components/shipping/shipping.component';
     ItemsComponent,
     CartComponent,
     CartItemComponent,
-    ItemsComponent,
+    ItemComponent,
     ShippingComponent,
 
 
