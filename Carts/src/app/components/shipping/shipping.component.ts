@@ -17,6 +17,7 @@ export class ShippingComponent implements OnInit {
   @Input('ngModel') shipState: string | undefined;
   @Input('ngModel') shipCountry: string | undefined;
   @Input('ngModel') shipEmail: string | undefined;
+  @Input('ngModel') shippingMethod: string = "Regular"; //gave this a value since I wasn't sure if the default item would be passed in via onShippingMethodChange
 
   constructor(private service:ShippingInfoService) { }
 
@@ -24,7 +25,11 @@ export class ShippingComponent implements OnInit {
   }
 
   packageShippingInfo() {
-    this.service.shippingInfo = new ShippingInfo(0, this.shipStreetAddress, this.shipCity, this.shipZipCode, this.shipState, this.shipCountry, this.shipEmail);
+    this.service.shippingInfo = new ShippingInfo(0, this.shipStreetAddress, this.shipCity, this.shipZipCode, this.shipState, this.shipCountry, this.shipEmail, this.shippingMethod);
+  }
+
+  onShippingMethodChange(event: Event) {
+    this.shippingMethod = (event.target as HTMLInputElement).value;
   }
 
 

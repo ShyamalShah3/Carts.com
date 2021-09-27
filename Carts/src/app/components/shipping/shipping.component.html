@@ -50,11 +50,11 @@
     <div class="row gy-3">
         <div class="col">
             <div class="form-check form-check-inline">
-             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-1" value="option1" checked>
+             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-1" value="Regular" (change)="onShippingMethodChange($event)" checked>
              <label class="form-check-label" for="ship-radio-method-1">Regular (10-12 business days)</label>
             </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-2" value="option2">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-2" value="Expedited" (change)="onShippingMethodChange($event)">
             <label class="form-check-label" for="ship-radio-method-2">Expedited (3-5 business days)</label>
         </div>
         </div>
