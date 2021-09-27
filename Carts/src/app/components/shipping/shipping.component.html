@@ -1,0 +1,80 @@
+<h1 class="mb-3">Shipping</h1>
+<div class="container">
+
+    <h3>Shipping Address</h3>
+    <div class="row gy-3">
+        <div class="col">
+          <label for="ship-street-address" class="form-label">Street Address</label>
+          <input type="text" class="form-control" id="ship-street-address" placeholder="" required>
+          <div class="invalid-feedback">
+            Shipping Street Address is required
+          </div>
+        </div>
+      
+        <div class="col">
+          <label for="ship-city" class="form-label">City</label>
+          <input type="text" class="form-control" id="ship-city" placeholder="" required>
+          <div class="invalid-feedback">
+            Shipping City is required
+          </div>
+        </div>
+      
+        <div class="col">
+          <label for="ship-zip-code" class="form-label">Zip/Postal Code</label>
+          <input type="text" class="form-control" id="ship-zip-code" placeholder="" required>
+          <div class="invalid-feedback">
+            Shipping Zip/Postal Code is required
+          </div>
+        </div>
+    </div>
+    <div class="row gy-3">
+        <div class="col">
+          <label for="ship-state" class="form-label">State/Province/Region</label>
+          <input type="text" class="form-control" id="ship-state" placeholder="" required>
+          <div class="invalid-feedback">
+            Shipping State/Province/Region is required
+          </div>
+        </div>
+      
+        <div class="col">
+          <label for="ship-country" class="form-label">Country</label>
+          <input type="text" class="form-control" id="ship-country" placeholder="" required>
+          <div class="invalid-feedback">
+            Shipping Country is required
+          </div>
+        </div>
+
+    </div>
+
+    <h3>Shipping Method</h3>
+    <div class="row gy-3">
+        <div class="col">
+            <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-1" value="option1">
+             <label class="form-check-label" for="ship-radio-method-1">Regular (10-12 business days)</label>
+            </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-2" value="option2">
+            <label class="form-check-label" for="ship-radio-method-2">Expedited (3-5 business days)</label>
+        </div>
+        </div>
+        <div class="col">
+            <p>Estimated Shipping Fee:</p>
+            <p>$3.00</p>
+        </div>
+    </div>
+
+    <div class="row gy-3">
+        <label for="ship-email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="ship-email" placeholder="" required>
+        <div class="invalid-feedback">
+          Email is required for confirmation
+        </div>
+    </div>
+</div>
+
+
+<hr class="my-4">
+<button type="button" class="btn btn-outline-primary me-3">Cancel</button>
+<div class="divider"></div>
+<button type="button" class="btn btn-primary">Next</button>
