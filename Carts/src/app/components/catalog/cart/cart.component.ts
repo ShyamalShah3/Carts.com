@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
   constructor(private msg: MessengerService, private ctcServe:CatalogToCartService) { 
     if (this.ctcServe.cartItems.length > 0) {
       this.cartItems = this.ctcServe.cartItems;
+      this.cartTotal = this.ctcServe.total;
     }
   }
 
