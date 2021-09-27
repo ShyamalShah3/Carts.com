@@ -51,6 +51,6 @@
 </div>
 
 <hr class="my-4">
-<button type="button" class="btn btn-outline-primary me-3">Back</button>
+<a routerLink="/shipping"><button type="button" class="btn btn-outline-primary me-3">Back</button></a>
 <div class="divider"></div>
-<button  class="btn btn-primary" (click)="getPayment()" formtarget="_blank">Check Out</button>
+<button  class="btn btn-primary" (click)="getPayment()" (click)="btnCheckOutClick() " formtarget="_blank">Check Out</button>

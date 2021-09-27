@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { paymentInfo } from 'src/app/models/paymentInfo';
 import { PaymentInfoService } from 'src/app/services/payment.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { PaymentInfoService } from 'src/app/services/payment.service';
 })
 export class PaymentPageComponent implements OnInit {
   myPayData:PaymentInfoService= new PaymentInfoService(new paymentInfo);
-  constructor() {
+  constructor(private router: Router) {
    }
 
   ngOnInit(): void {
@@ -28,5 +29,8 @@ export class PaymentPageComponent implements OnInit {
     this.myPayData=new PaymentInfoService(new paymentInfo(name,number,expD,cvv));
 
     console.log(this.myPayData.pInfo.getCVV);
+  }
+  btnCheckOutClick(){
+    this.router.navigateByUrl('/summary');
   }
 }
