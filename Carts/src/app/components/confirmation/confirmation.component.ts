@@ -17,11 +17,11 @@ export class ConfirmationComponent implements OnInit {
   myCartItems : CartItem[] = [];
   myCartTotal : number = 0
   date: string = "";
-  cardNumber: string = "";
+  cardNumber: string | undefined;
 
   constructor(private pis: PaymentInfoService, private sis: ShippingInfoService, private ctc: CatalogToCartService) { 
     this.myPayment = pis.pInfo;
-    this.cardNumber = this.getPrivateCardNumber(this.myPayment?.cardNumber);
+    this.cardNumber = this.pis.pInfo?.lastFour;
     this.myShipping = sis.shippingInfo;
     this.myCartItems = ctc.cartItems;
     this.myCartTotal = ctc.total;
@@ -44,10 +44,4 @@ export class ConfirmationComponent implements OnInit {
     let yyyy = today.getFullYear();
     return mm+"/"+dd+"/"+yyyy;
   }
-
-  getPrivateCardNumber(publicCardNumber: string | undefined): string{
-    return "";
-  }
-
-
 }
