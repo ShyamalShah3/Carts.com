@@ -12,6 +12,9 @@ import { toJSDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar';
   styleUrls: ['./summary-page.component.css']
 })
 export class SummaryPageComponent implements OnInit {
+  totalMoney : number =0;
+  itemArray : string[]=[];
+  itemAllName : string ="";
  myPayment : paymentInfo |undefined;
  myShipping : ShippingInfo |undefined;
  myCartInfo : CartItem[] =[];
@@ -20,7 +23,11 @@ export class SummaryPageComponent implements OnInit {
     this.myShipping=sis.shippingInfo;
     this.myCartInfo = cis.cartItems;
     console.log(this.myCartInfo[0].name);
-   
+    for(let i =0;i<this.myCartInfo.length;i++){
+      this.totalMoney += this.myCartInfo[i].price;
+      this.itemArray[i]= this.myCartInfo[i].name;
+    }
+    this.itemAllName = this.itemArray.toString();
   }
 
   ngOnInit(): void {
