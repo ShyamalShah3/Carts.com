@@ -50,4 +50,17 @@ export class ShippingInfo {
         return this.mShippingMethod;
     }
 
+<<<<<<< Updated upstream
+=======
+    public clear() {
+        this.mId = -1;
+        this.mStreetAddress = "Unknown";
+        this.mCity = "Unknown";
+        this.mZipCode = "Unknown";
+        this.mState = "Unknown";
+        this.mCountry = "Unknown";
+        this.mEmailAddress = "Unknown";
+        this.mShippingMethod = "Unknown";
+    }
+>>>>>>> Stashed changes
 }

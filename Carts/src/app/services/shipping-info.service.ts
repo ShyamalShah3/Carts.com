@@ -16,5 +16,5 @@ export class ShippingInfoService {
   public set shippingInfo(shippingInfo:ShippingInfo | undefined) {
     this.mShippingInfo = shippingInfo;
   }
-  
+
 }

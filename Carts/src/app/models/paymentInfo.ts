@@ -24,4 +24,11 @@ export class paymentInfo {
     public get getCVV(): string{
         return this.CVV;
     }
+    public clear() {
+        this.nameOnCard = "";
+        this.cardNumber = "";
+        this.expDate = "";
+        this.CVV = "";
+    }
+
 }

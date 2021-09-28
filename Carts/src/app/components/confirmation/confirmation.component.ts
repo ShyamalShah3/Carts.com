@@ -26,6 +26,11 @@ export class ConfirmationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onReturnToCatalog() {
+    this.pis.pInfo?.clear();
+    this.sis.shippingInfo?.clear();
+    this.ctc.clear();
+  }
 
 
 }

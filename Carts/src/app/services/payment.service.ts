@@ -18,4 +18,5 @@ export class PaymentInfoService {
   public set pInfo(myPInfo:paymentInfo | undefined) {
     this.myPayment = myPInfo;
   }
+
 }

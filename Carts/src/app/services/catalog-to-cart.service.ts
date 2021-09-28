@@ -26,5 +26,8 @@ export class CatalogToCartService {
  public set total(total:number) {
    this.mTotal = total;
  }
-
+ public clear(){
+   this.mCartItems = [];
+   this.mTotal = 0;
+ }
 }
