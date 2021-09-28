@@ -44,3 +44,8 @@
 .total-custom {
     font-size: small;
 }
+
+.return-button {
+    text-align: center;
+    padding-top: 10px;
+}
