@@ -27,7 +27,7 @@
 
   <div class="col-md-6">
     <label for="cc-number" class="form-label">Credit card number</label>
-    <input type="text" class="form-control" id="cc-number" placeholder=""[(ngModel)]="cardNum" required>
+    <input type="text" class="form-control" id="cc-number" placeholder=""[(ngModel)]="cardNum" data-by-creditcard="true" data-by-creditcard-message="Invalid Credit Card Number" required>
     <div class="invalid-feedback">
       Credit card number is required
     </div>
