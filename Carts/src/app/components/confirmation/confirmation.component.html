@@ -18,7 +18,7 @@
                                         <div class="py-2"> <span class="d-block text-muted">Payment</span> <span>{{this.myPayment?.cardNumber}}</span> </div>
                                     </td>
                                     <td>
-                                        <div class="py-2"> <span class="d-block text-muted">Shiping Address</span> <span>{{this.myShipping?.streetAddress}}, {{this.myShipping?.city}}, {{this.myShipping?.state}} {{this.myShipping?.zipCode}}</span> </div>
+                                        <div class="py-2"> <span class="d-block text-muted">Shiping Address</span> <span>{{this.myShipping?.streetAddress}}, {{this.myShipping?.city}}, {{this.myShipping?.state}} {{this.myShipping?.zipCode}} {{this.myShipping?.country}}</span> </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -67,7 +67,9 @@
                     <p>An order confirmation email will be sent to {{this.myShipping?.emailAddress}} shortly.</p>
                     <p class="font-weight-bold mb-0">Thanks for shopping with us!</p> <span>Carts.com</span>
                 </div>
-                <!-- Add Return to Catalog Button-->
+            </div>
+            <div class="return-button">
+                <a routerLink="/catalog"><button type="button" class="btn btn-lg btn-primary product-btn">Return To Catalog</button></a>
             </div>
         </div>
     </div>
