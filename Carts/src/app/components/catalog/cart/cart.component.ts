@@ -3,6 +3,7 @@ import { MessengerService } from 'src/app/services/messenger.service';
 import { CartItem } from 'src/app/models/cart-item';
 import { Product } from 'src/app/models/product';
 import { CatalogToCartService } from 'src/app/services/catalog-to-cart.service';
+import { AddToCart } from 'src/app/models/add-to-cart';
 
 
 @Component({
@@ -23,22 +24,24 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.msg.getMsg().subscribe((product: any)  => {this.addProductToCart(product)});
+    this.msg.getMsg().subscribe((addToCart: any)  => {this.addProductToCart(addToCart)});
   }
 
-  addProductToCart(product: Product) {
+  addProductToCart(addToCart: AddToCart) {
     let itemExists = false;
-
+    let product = addToCart.mProduct;
     for (let i in this.cartItems) {
       if (this.cartItems[i].productId == product.id){
-        this.cartItems[i].qty++;
+        this.cartItems[i].qty += addToCart.mQty;
         itemExists = true;
         break;
       }
     }
 
     if (!itemExists){
-      this.cartItems.push(new CartItem(1, product.id, product.name, 1, product.price));
+      if (addToCart.mQty > 0) {
+        this.cartItems.push(new CartItem(1, product.id, product.name, addToCart.mQty, product.price, product.imageUrl));
+      }
     }
     
     this.updateTotal();

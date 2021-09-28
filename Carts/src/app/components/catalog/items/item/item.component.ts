@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { AddToCart } from 'src/app/models/add-to-cart';
 import { Product } from 'src/app/models/product';
 import { MessengerService } from 'src/app/services/messenger.service';
 
@@ -10,6 +11,7 @@ import { MessengerService } from 'src/app/services/messenger.service';
 export class ItemComponent implements OnInit {
 
   @Input() productItem!: Product;
+  @Input('ngModel') qty: number | undefined;
 
   constructor(private msg: MessengerService) { }
 
@@ -17,7 +19,7 @@ export class ItemComponent implements OnInit {
   }
 
   handleAddToCart() {
-    this.msg.sendMsg(this.productItem);
+    this.msg.sendMsg(new AddToCart(this.productItem, this.qty));
   }
 
 }

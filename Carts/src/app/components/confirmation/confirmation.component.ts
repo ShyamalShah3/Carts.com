@@ -16,11 +16,16 @@ export class ConfirmationComponent implements OnInit {
   myShipping : ShippingInfo |undefined;
   myCartItems : CartItem[] = [];
   myCartTotal : number = 0
+  date: string = "";
+  cardNumber: string = "";
+
   constructor(private pis: PaymentInfoService, private sis: ShippingInfoService, private ctc: CatalogToCartService) { 
     this.myPayment = pis.pInfo;
+    this.cardNumber = this.getPrivateCardNumber(this.myPayment?.cardNumber);
     this.myShipping = sis.shippingInfo;
     this.myCartItems = ctc.cartItems;
     this.myCartTotal = ctc.total;
+    this.date = this.getDate();
   }
 
   ngOnInit(): void {
@@ -30,6 +35,18 @@ export class ConfirmationComponent implements OnInit {
     this.pis.pInfo?.clear();
     this.sis.shippingInfo?.clear();
     this.ctc.clear();
+  }
+
+  getDate(): string {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth()+1; //As January is 0.
+    let yyyy = today.getFullYear();
+    return mm+"/"+dd+"/"+yyyy;
+  }
+
+  getPrivateCardNumber(publicCardNumber: string | undefined): string{
+    return "";
   }
 
 

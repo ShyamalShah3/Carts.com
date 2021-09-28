@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { AddToCart } from '../models/add-to-cart';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -11,8 +12,8 @@ export class MessengerService {
 
   constructor() { }
 
-  sendMsg(product: Product) {
-    this.subject.next(product); //Triggering event
+  sendMsg(addToCart: AddToCart) {
+    this.subject.next(addToCart); //Triggering event
   }
 
   getMsg() {

@@ -12,7 +12,7 @@ export class ProductService {
     new Product(3, "Liquor Store Cart", "This is a modern Liquor Store Cart.", 130, "https://cdna3.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000TM7fPQAT/media/catalog/product/m/o/modern-liquor-store-shopping-cart-30.gif.gif"),
     new Product(4, "Kids Miniature Shopping Cart", "This is a miniature shopping cart intended to be used by children.", 70.0, "https://m.media-amazon.com/images/I/410igDjak5L._AC_.jpg"),
     new Product(5, "Senior Shopping Cart", "This is a shoppping cart intended to be used by Seniors.", 120.0, "https://m.media-amazon.com/images/I/71HhPBwMYPL._AC_SL1500_.jpg"),
-    new Product(5, "Bubbles", "Bubbles", 9000.0)
+    new Product(6, "Bubbles", "Bubbles", 9000.0)
   ];
 
   constructor() {}
