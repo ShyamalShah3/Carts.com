@@ -25,7 +25,7 @@ export class ShippingComponent implements OnInit {
   }
 
   packageShippingInfo() {
-    this.service.shippingInfo = new ShippingInfo(0, this.shipStreetAddress, this.shipCity, this.shipZipCode, this.shipState, this.shipCountry, this.shipEmail, this.shippingMethod);
+    this.service.shippingInfo = new ShippingInfo(0, this.shipStreetAddress, this.shipCity, this.shipZipCode, this.shipState, this.shipCountry,this.shipEmail,  this.shippingMethod);
   }
 
   onShippingMethodChange(event: Event) {

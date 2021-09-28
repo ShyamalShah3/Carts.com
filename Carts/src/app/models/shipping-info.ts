@@ -5,6 +5,7 @@ export class ShippingInfo {
     private mZipCode:string;
     private mState:string;
     private mCountry:string;
+    private emailAddr: string;
 
     constructor(id:number = -1, streetAddress:string = "Unknown", city:string = "Unknown", zipCode:string = "Unknown", state:string = "Unknown", country:string = "Unknown", private mEmailAddress:string = "Unknown", private mShippingMethod:string = "Unknown") {
         this.mId = id;
@@ -12,7 +13,8 @@ export class ShippingInfo {
         this.mCity = city;
         this.mZipCode = zipCode;
         this.mState = state;
-        this.mCountry = state;
+        this.mCountry = country;
+        this.emailAddr = mEmailAddress;
     }
 
     
@@ -41,10 +43,11 @@ export class ShippingInfo {
     }
 
     public get emailAddress() : string {
-        return this.emailAddress;
+        return this.emailAddr;
     }
 
     public get shippingMethod() : string {
         return this.mShippingMethod;
     }
+
 }
