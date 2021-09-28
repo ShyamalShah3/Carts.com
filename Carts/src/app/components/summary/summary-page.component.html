@@ -1,20 +1,19 @@
 <h1 class = "fs-1">SUMMARY</h1>
 <h2 class = 'fw-normal fs-4'>Shipping Information</h2>
-<p>{{this.myShipping?.streetAddress}}</p>
-<p>{{this.myShipping?.city}}</p>
-<p>{{this.myShipping?.state}}</p>
-<p>{{this.myShipping?.zipCode}}</p>
-<p>{{this.myShipping?.country}}</p>
+<p>Street: {{this.myShipping?.streetAddress}}</p>
+<p>City: {{this.myShipping?.city}}</p>
+<p>State: {{this.myShipping?.state}}</p>
+<p>Zip: {{this.myShipping?.zipCode}}</p>
+<p>Country: {{this.myShipping?.country}}</p>
 <p>Shipping method: {{this.myShipping?.shippingMethod}}</p>
 <p>Email: {{this.myShipping?.emailAddress}}</p>
 <h3 class = 'fw-normal fs-4'>Shopping Information</h3>
 <p>{{this.myCartInfo[0].name}}</p>
-<p>${{this.myCartInfo[0].price}}</p>
-<p>Total: $45</p>
+<p>Total: ${{this.myCartInfo[0].price}}</p>
 <h4 class = 'fw-normal fs-4'>Payment Information</h4>
-<p>{{this.myPayment?.getCardName}}</p>
-<p>{{this.myPayment?.cardNumber}}</p>
-<p>{{this.myPayment?.getExpD}}</p>
+<p>Card Name: {{this.myPayment?.getCardName}}</p>
+<p>Card Number: {{this.myPayment?.cardNumber}}</p>
+<p>Expiration date: {{this.myPayment?.getExpD}}</p>
 <a routerLink="/payment"><button type="button" class="btn btn-outline-primary me-3">Back</button></a>
 <div class="divider"></div>
 <a routerLink="/confirmation"><button type="button" class="btn btn-primary">Purchase</button></a>
