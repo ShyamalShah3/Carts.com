@@ -5,6 +5,7 @@ import { paymentInfo } from 'src/app/models/paymentInfo';
 import { PaymentInfoService } from 'src/app/services/payment.service';
 import { CatalogToCartService } from 'src/app/services/catalog-to-cart.service';
 import { CartItem } from 'src/app/models/cart-item';
+import { toJSDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar';
 @Component({
   selector: 'app-summary-page',
   templateUrl: './summary-page.component.html',
@@ -18,7 +19,8 @@ export class SummaryPageComponent implements OnInit {
     this.myPayment=pis.pInfo;
     this.myShipping=sis.shippingInfo;
     this.myCartInfo = cis.cartItems;
-    //console.log(this.myShipping?.emailAddress);
+    console.log(this.myCartInfo[0].name);
+   
   }
 
   ngOnInit(): void {

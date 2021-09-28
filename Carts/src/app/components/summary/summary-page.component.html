@@ -8,7 +8,8 @@
 <p>Shipping method: {{this.myShipping?.shippingMethod}}</p>
 <p>Email: {{this.myShipping?.emailAddress}}</p>
 <h3 class = 'fw-normal fs-4'>Shopping Information</h3>
-<p>1 cart</p>
+<p>{{this.myCartInfo[0].name}}</p>
+<p>${{this.myCartInfo[0].price}}</p>
 <p>Total: $45</p>
 <h4 class = 'fw-normal fs-4'>Payment Information</h4>
 <p>{{this.myPayment?.getCardName}}</p>
