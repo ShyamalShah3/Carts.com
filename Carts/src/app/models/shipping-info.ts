@@ -41,7 +41,7 @@ export class ShippingInfo {
     }
 
     public get emailAddress() : string {
-        return this.emailAddress;
+        return this.mEmailAddress;
     }
 
     public get shippingMethod() : string {
