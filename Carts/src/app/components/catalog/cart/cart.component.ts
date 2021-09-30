@@ -32,15 +32,21 @@ export class CartComponent implements OnInit {
     let product = addToCart.mProduct;
     for (let i in this.cartItems) {
       if (this.cartItems[i].productId == product.id){
-        this.cartItems[i].qty += addToCart.mQty;
+        if (addToCart.mQty != null && addToCart.mQty > 1) {
+          this.cartItems[i].qty += addToCart.mQty;
+        } else {
+          this.cartItems[i].qty += 1;
+        }
         itemExists = true;
         break;
       }
     }
 
     if (!itemExists){
-      if (addToCart.mQty > 0) {
+      if (addToCart.mQty != null && addToCart.mQty > 1) {
         this.cartItems.push(new CartItem(1, product.id, product.name, addToCart.mQty, product.price, product.imageUrl));
+      }else {
+        this.cartItems.push(new CartItem(1, product.id, product.name, 1, product.price, product.imageUrl));
       }
     }
     
