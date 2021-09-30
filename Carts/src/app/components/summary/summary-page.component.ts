@@ -22,7 +22,6 @@ export class SummaryPageComponent implements OnInit {
     this.myPayment=pis.pInfo;
     this.myShipping=sis.shippingInfo;
     this.myCartInfo = cis.cartItems;
-    console.log(this.myCartInfo[0].name);
     for(let i =0;i<this.myCartInfo.length;i++){
       this.totalMoney += this.myCartInfo[i].price;
       this.itemArray[i]= this.myCartInfo[i].name;
