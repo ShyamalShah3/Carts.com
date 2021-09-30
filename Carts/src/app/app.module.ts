@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ConfirmationItemComponent } from './components/confirmation/confirmation-item/confirmation-item.component';
+import { SummaryItemsComponent } from './components/summary/summary-items/summary-items.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ConfirmationItemComponent } from './components/confirmation/confirmatio
     ShippingComponent,
     ShoppingCartComponent,
     ConfirmationComponent,
-    ConfirmationItemComponent
+    ConfirmationItemComponent,
+    SummaryItemsComponent,
 
   ],
   imports: [
