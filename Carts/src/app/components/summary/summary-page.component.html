@@ -8,12 +8,15 @@
 <p>Shipping method: {{this.myShipping?.shippingMethod}}</p>
 <p>Email: {{this.myShipping?.emailAddress}}</p>
 <h3 class = 'fw-normal fs-4'>Shopping Information</h3>
-<p>{{this.itemAllName}}</p>
-
+<tbody> 
+<tr *ngFor="let item of myCartInfo">
+    <app-confirmation-item [cartItem]="item"></app-confirmation-item>
+</tr>
+</tbody>
 <p>Total: ${{this.totalMoney}}</p>
 <h4 class = 'fw-normal fs-4'>Payment Information</h4>
 <p>Card Name: {{this.myPayment?.getCardName}}</p>
-<p>Card Number: {{this.myPayment?.cardNumber}}</p>
+<p>Card Number: {{this.myPayment?.lastFour}}</p>
 <p>Expiration date: {{this.myPayment?.getExpD}}</p>
 <a routerLink="/payment"><button type="button" class="btn btn-outline-primary me-3">Back</button></a>
 <div class="divider"></div>
