@@ -11,12 +11,12 @@ export class ShoppingCartComponent implements OnInit {
 
   cartItems:CartItem[] = [];
   cartTotal = 0;
+  totalItems = 0;
 
   constructor(private ctcServe:CatalogToCartService) { 
     this.cartItems = ctcServe.cartItems;
-    this.cartItems.forEach(element => {
-      this.cartTotal += element.qty * element.price;
-    });
+    this.cartTotal = ctcServe.total;
+    this.totalItems = ctcServe.totalItems;
   }
 
   ngOnInit(): void {

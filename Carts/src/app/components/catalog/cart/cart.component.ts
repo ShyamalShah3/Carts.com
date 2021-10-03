@@ -44,26 +44,18 @@ export class CartComponent implements OnInit {
 
     if (!itemExists){
       if (addToCart.mQty != null && addToCart.mQty > 1) {
-        this.cartItems.push(new CartItem(1, product.id, product.name, addToCart.mQty, product.price, product.imageUrl));
+        this.cartItems.push(new CartItem(1, product.id, product.name, addToCart.mQty, product.price, product.imageUrl, product.description));
       }else {
-        this.cartItems.push(new CartItem(1, product.id, product.name, 1, product.price, product.imageUrl));
+        this.cartItems.push(new CartItem(1, product.id, product.name, 1, product.price, product.imageUrl, product.description));
       }
     }
-    
-    this.updateTotal();
+
     this.goToCart();
+    this.cartTotal = this.ctcServe.total;
   }
 
   goToCart() {
     this.ctcServe.cartItems = this.cartItems;
-    this.ctcServe.total = this.cartTotal;
-  }
-
-  updateTotal() {
-    this.cartTotal = 0;
-    this.cartItems.forEach(item => {
-      this.cartTotal += (item.qty * item.price);
-    });
   }
 
 }

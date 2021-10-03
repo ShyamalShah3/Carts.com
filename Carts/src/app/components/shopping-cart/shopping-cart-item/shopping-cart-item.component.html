@@ -1,0 +1,40 @@
+<div class="ibox-content">
+    <div class="table-responsive">
+        <table class="table shoping-cart-table">
+            <tbody>
+            <tr>
+                <td width="90">
+                    <img src="{{cartItem.url}}" width="90">
+                </td>
+                <td class="desc" width="550">
+                    <h3>
+                    <a href="#" class="text-navy">
+                        {{cartItem.name}}
+                    </a>
+                    </h3>
+                    <p class="small">
+                        {{cartItem.description}}
+                    </p>
+                    <div class="m-t-sm">
+                        <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
+                        |
+                        <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                    </div>
+                </td>
+
+                <td width="50">
+                    {{cartItem.price | currency:'USD'}}
+                </td>
+                <td width="80">
+                    <input type="number" class="form-control" placeholder="{{cartItem.qty}}" width="70">
+                </td>
+                <td>
+                    <h4>
+                        {{(cartItem.qty * cartItem.price) | currency:'USD'}}
+                    </h4>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
