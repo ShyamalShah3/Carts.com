@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CatalogToCartService } from 'src/app/services/catalog-to-cart.service';
 
 @Component({
   selector: 'app-shopping-cart-item',
@@ -8,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ShoppingCartItemComponent implements OnInit {
 
   @Input() cartItem!: any;
-  constructor() { }
+  constructor(private ctc:CatalogToCartService) { }
 
   ngOnInit(): void {
   }
 
+  public removeItem(productId: number) {
+    this.ctc.removeItem(productId);
+  }
 }

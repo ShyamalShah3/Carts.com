@@ -13,14 +13,18 @@ export class ShoppingCartComponent implements OnInit {
   cartTotal = 0;
   totalItems = 0;
 
-  constructor(private ctcServe:CatalogToCartService) { 
-    this.cartItems = ctcServe.cartItems;
-    this.cartTotal = ctcServe.total;
-    this.totalItems = ctcServe.totalItems;
+  constructor(public ctc:CatalogToCartService) { 
+    this.cartItems = ctc.cartItems;
+    this.cartTotal = ctc.total;
+    this.totalItems = ctc.totalItems;
   }
 
   ngOnInit(): void {
     
+  }
+
+  public clearCart() {
+    this.ctc.clear();
   }
 
 }
