@@ -26,7 +26,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { ContactUsConfirmationComponent } from './components/contact-us/contact-us-confirmation/contact-us-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +51,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AboutComponent,
     HomeComponent,
     CarouselComponent,
+    ContactUsConfirmationComponent,
   ],
   imports: [
     BrowserModule,

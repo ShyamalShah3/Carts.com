@@ -7,10 +7,9 @@ export enum ContactUsKind {
 
 export class ContactUsInfo {
     
-    public static dropDown:[dropDownText:string, kind:ContactUsKind][] = [["Help with a product or service", ContactUsKind.ProductOrServiceHelp], ["Help with a shipping related issue", ContactUsKind.ShippingIssue],
-                                                                        ["Help with a payment related issue", ContactUsKind.PaymentProblem], ["Other Problems or General Feedback", ContactUsKind.GeneralFeedback]];
+    
 
-    public constructor(private mKind:ContactUsKind = ContactUsKind.GeneralFeedback, private mInputText:String = "") {
+    public constructor(private mKind:ContactUsKind = ContactUsKind.GeneralFeedback, private mInputText:String = "", private mEmail:string = "") {
 
     }
 
@@ -28,6 +27,14 @@ export class ContactUsInfo {
 
     public set inputText(text) {
         this.mInputText = text;
+    }
+
+    public get email() {
+        return this.mEmail;
+    }
+
+    public set email(email){
+        this.mEmail = email;
     }
 
 }

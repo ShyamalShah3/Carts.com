@@ -1,1 +1,68 @@
-<p>contact-us works!</p>
+<div class="container" *ngIf="submittedForm">
+    <app-contact-us-confirmation></app-contact-us-confirmation>
+</div>
+<div class="container" *ngIf="!submittedForm">
+    <form [formGroup]="contactUsForm" class = "container">
+        <div class="h1">Contact Us</div>
+    
+        <div class="row">
+            <select class="form-control" formControlName="contactUsKind" required>
+                <option value = "undefined" selected disabled>Select Category</option>
+                <option *ngFor="let o of dropDownOptions" [value]="o[1]">{{o[0]}}</option>
+           </select>
+           <div *ngIf="kindForm?.value == 'undefined' && (kindForm?.dirty || kindForm?.touched)" class="text-danger">
+            Please select an option so that we know how best to assist you.
+          </div>
+        </div>
+    
+        <hr class="my-4">
+    
+        <div class="container" *ngIf="kindForm?.value != 'undefined'">
+            <div class="row" [ngSwitch]="kindForm?.value">
+                <div class="container" *ngSwitchCase="KindEnum.ProductOrServiceHelp">
+                    <div class="p">We're sorry that you're having trouble with one of our products or services. Please let us know more about your problem down below and provide your email so that we can get back to you.</div>
+                  </div>
+                  <div class="container" *ngSwitchCase="KindEnum.ShippingIssue">
+                      <div class="p">We're sorry that you're having trouble with shipping. Please let us know more about your problem down below and provide your email so that we can get back to you.</div>
+                  </div>
+                  <div class="container" *ngSwitchCase="KindEnum.PaymentProblem">
+                    <div class="p">We're sorry that you're having trouble with payment. Please let us know more about your problem down below and leave your email so that we can get back to you.</div>
+                </div>
+                <div class="container" *ngSwitchCase="KindEnum.GeneralFeedback">
+                    <div class="p">Thank you for your for your feedback. We continuously strive to provide the best user experience possible.</div>
+                </div>
+                <div class="container" *ngSwitchDefault>
+                </div>
+            </div>
+            <label for="contact-us-text" class="form-label">Tell us more</label>
+            <textarea type="text" class="form-control" id="contact-us-text" rows="10" placeholder="Tell us more..." formControlName="contactUsText" required></textarea>
+            <div *ngIf="textForm?.invalid && (textForm?.dirty || textForm?.touched)" class="text-danger">
+                 <div *ngIf="textForm?.errors?.required">
+                    Please tell us more about your problem so that we know how best to assist you or input your feedback.
+                </div>
+            </div>
+    
+    
+            <div class="row">
+                <label for="ship-email" class="form-label">Contact Email</label>
+                <input type="text" class="form-control" id="ship-email" placeholder="kittiesLuvBubbles@yahoo.com" formControlName="contactUsEmail" required>
+                <div *ngIf="emailForm?.invalid && (emailForm?.dirty || emailForm?.touched)" class="text-danger">
+                  <div *ngIf="emailForm?.errors?.required">
+                    Email is required for us to respond to your problem or feedback.
+                  </div>
+                  <div *ngIf="emailForm?.errors?.pattern">
+                    Email does not seem to be a valid email address.
+                  </div>
+                </div>
+            </div>
+    
+            <hr class="my-4">
+    
+            <div class="row">
+                   <a *ngIf="contactUsForm.valid"><button (click)="onSubmitClick()" type="submit" class="btn btn-primary">Submit</button></a>
+                   <a *ngIf="!contactUsForm.valid"><button  type="submit" class="btn btn-primary" disabled>Submit</button></a>
+            </div>
+    
+            </div>
+    </form>
+</div>

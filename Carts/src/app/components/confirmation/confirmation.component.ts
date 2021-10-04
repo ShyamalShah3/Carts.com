@@ -21,7 +21,7 @@ export class ConfirmationComponent implements OnInit {
 
   constructor(private pis: PaymentInfoService, private sis: ShippingInfoService, private ctc: CatalogToCartService) { 
     this.myPayment = pis.pInfo;
-    this.cardNumber = this.pis.pInfo?.lastFour;
+    this.cardNumber = this.pis.pInfo.CardNum.substring(this.pis.pInfo.CardNum.length-1);
     this.myShipping = sis.shippingInfo;
     this.myCartItems = ctc.cartItems;
     this.myCartTotal = ctc.total;

@@ -8,6 +8,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { SummaryPageComponent } from './components/summary/summary-page.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
 {path:'catalog', component:CatalogComponent},
 {path: 'confirmation', component: ConfirmationComponent},
 {path: 'about', component: AboutComponent},
-{path: 'home', component: HomeComponent}
+{path: 'home', component: HomeComponent},
+{path: 'contact-us', component: ContactUsComponent}
 
 ];
 

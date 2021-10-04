@@ -2,42 +2,56 @@
 
 
 export class paymentInfo {
-    nameOnCard: string;
-    cardNumber: string;
-    expDate: string;
-    CVV: string;
-    lastFour: string = "";
+     mNameOnCard: string;
+    mCardNumber: string;
+     mExpDate: string;
+     mCVV: string;
+ 
     constructor(nameOnCard: string="",cardNumber: string="" ,expDate: string="",CVV: string=""){
-        this.nameOnCard=nameOnCard;
-        this.cardNumber=cardNumber;
-        this.expDate = expDate;
-        this.CVV=CVV;
-        this.lastFour = this.getLastFour();
+        this.mNameOnCard=nameOnCard;
+        this.mCardNumber=cardNumber;
+        this.mExpDate = expDate;
+        this.mCVV=CVV;
+       
     }
-    public get getCardName(): string{
-        return this.nameOnCard;
+    public get CardName(){
+        return this.mNameOnCard;
     }
-    public get getCardNum(): string{
-        return this.cardNumber;
+    public get CardNum(){
+        return this.mCardNumber;
     }
-    public get getExpD(): string{
-        return this.expDate;
+    public get ExpD(){
+        return this.mExpDate;
     }
-    public get getCVV(): string{
-        return this.CVV;
+    public get cvv(){
+        return this.mCVV;
     }
-    public clear() {
-        this.nameOnCard = "";
-        this.cardNumber = "";
-        this.expDate = "";
-        this.CVV = "";
+    public set CardName(CardName:string){
+      this.mNameOnCard = CardName;
+    }
+    public set CardNum(CardNum:string){
+        this.mCardNumber = CardNum;
+    }
+    public set ExpD(ExpD:string){
+       this.mExpDate = ExpD
+    }
+    public set cvv(cvv:string){
+       this.mCVV=cvv;
     }
 
-    getLastFour(): string {
-        let length = this.cardNumber.length;
-        let result = '*'.repeat((length - 4));
-        result += this.cardNumber.substring((length-4));
-        return result;
+    public clear() {
+        this.mNameOnCard = "";
+        this.mCardNumber = "";
+        this.mExpDate = "";
+        this.mCVV = "";
     }
+/*
+    getLastFour(): string {
+        let length = this.mCardNumber.length;
+        let result = '*'.repeat((length - 4));
+        result += this.mCardNumber.substring((length-4));
+        return "";
+    }
+    */
 
 }
