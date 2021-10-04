@@ -24,6 +24,8 @@ import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-c
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -48,13 +50,15 @@ import { HomeComponent } from './components/home/home.component';
     ContactUsComponent,
     AboutComponent,
     HomeComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers:[],
 
