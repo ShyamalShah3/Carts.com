@@ -21,6 +21,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { ConfirmationItemComponent } from './components/confirmation/confirmation-item/confirmation-item.component';
 import { SummaryItemsComponent } from './components/summary/summary-items/summary-items.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -42,6 +43,8 @@ import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-c
     ConfirmationItemComponent,
     SummaryItemsComponent,
     ShoppingCartItemComponent,
+    AboutComponent,
+    
 
   ],
   imports: [
