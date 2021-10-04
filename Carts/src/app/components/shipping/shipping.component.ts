@@ -24,6 +24,8 @@ export class ShippingComponent implements OnInit {
                                   shipCountry: new FormControl(this.shipInfo.country, [Validators.required]),
                                   shipEmail: new FormControl(this.shipInfo.emailAddress, [Validators.required, Validators.pattern(emailRegex)]),
                                 });
+   
+
   }
   
 

@@ -18,6 +18,7 @@ export class SummaryPageComponent implements OnInit {
  myPayment : paymentInfo |undefined;
  myShipping : ShippingInfo |undefined;
  myCartInfo : CartItem[] =[];
+ lastFour: string ="";
   constructor(private pis:PaymentInfoService, private sis:ShippingInfoService, private cis: CatalogToCartService){
     this.myPayment=pis.pInfo;
     this.myShipping=sis.shippingInfo;
@@ -27,6 +28,9 @@ export class SummaryPageComponent implements OnInit {
       this.itemArray[i]= this.myCartInfo[i].name;
     }
     this.itemAllName = this.itemArray.toString();
+    let length = this.myPayment.mCardNumber.length;
+    this.lastFour = '*'.repeat((length - 4));
+    this.lastFour+= this.myPayment.mCardNumber.substring((length-4));
   }
 
   ngOnInit(): void {

@@ -1,56 +1,81 @@
+<form [formGroup]="payForm" class="container"> 
+
 <h1 class="mb-3">Payment</h1>
 
 <div class="my-3">
-  <div class="form-check">
+  <!--<div class="form-check">
     <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
     <label class="form-check-label" for="credit">Credit card</label>
   </div>
   <div class="form-check">
     <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
     <label class="form-check-label" for="debit">Debit card</label>
-  </div>
-  <div class="form-check">
-    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-    <label class="form-check-label" for="paypal">PayPal</label>
-  </div>
+  </div>-->
+
 </div>
 
 <div class="row gy-3">
   <div class="col-md-6">
     <label for="cc-name" class="form-label">Name on card</label>
-    <input type="text" class="form-control" id="cc-name" placeholder=""[(ngModel)]="cardName"  required>
-    <small class="text-muted">Full name as displayed on card</small>
-    <div class="invalid-feedback">
-      Name on card is required
+    <input  type="text" class="form-control"  id="cc-name" placeholder="John Smith" formControlName="nameOnCard" required>
+    <div *ngIf="payForm?.invalid && (payForm?.dirty || payForm?.touched)" class="text-danger">
+      <div *ngIf="payForm?.errors?.required" >
+        The name on card is required.
+      </div>
+      <div *ngIf="payForm?.errors?.pattern">
+       The name on card does not seem to be a valid name.
+      </div>
     </div>
   </div>
 
   <div class="col-md-6">
-    <label for="cc-number" class="form-label">Credit card number</label>
-    <input type="text" class="form-control" id="cc-number" placeholder=""[(ngModel)]="cardNum" data-by-creditcard="true" data-by-creditcard-message="Invalid Credit Card Number" required>
-    <div class="invalid-feedback">
-      Credit card number is required
+    <label for="cc-number" class="form-label">Card number</label>
+    <input type="text" class="form-control"  id="cc-number" placeholder="The 12 numbers on the front of your card" formControlName="numOnCard" data-by-creditcard="true" data-by-creditcard-message="Invalid Credit Card Number" required>
+    <div *ngIf="payForm?.invalid && (payForm?.dirty || payForm?.touched)" class="text-danger">
+      <div *ngIf="payForm?.errors?.required" >
+       The card number is required.
+      </div>
+      <div *ngIf="payForm?.errors?.pattern">
+      The card number does not seem to be a valid 12 digits number.
+      </div>
     </div>
   </div>
 
   <div class="col-md-3">
     <label for="cc-expiration" class="form-label">Expiration</label>
-    <input type="text" class="form-control" id="cc-expiration" placeholder="" [(ngModel)]="expDate"required>
-    <div class="invalid-feedback">
-      Expiration date required
+    <input type="text" class="form-control" id="cc-expiration" placeholder="09/21"  formControlName="expDate" required>
+    <div *ngIf="payForm?.invalid && (payForm?.dirty || payForm?.touched)" class="text-danger">
+      <div *ngIf="payForm?.errors?.required" >
+       The expiration date is required.
+      </div>
+      <div *ngIf="payForm?.errors?.pattern">
+      The expiration date does not seem to be valid.
+      </div>
     </div>
   </div>
 
   <div class="col-md-3">
     <label for="cc-cvv" class="form-label">CVV</label>
-    <input type="text" class="form-control" id="cc-cvv" placeholder=""[(ngModel)]="CVV" required>
-    <div class="invalid-feedback">
-      Security code required
+    <input type="text" class="form-control" id="cc-cvv" placeholder="123" formControlName="cvv" required>
+    <div *ngIf="payForm?.invalid && (payForm?.dirty || payForm?.touched)" class="text-danger">
+      <div *ngIf="payForm?.errors?.required" >
+       The CVV is required.
+      </div>
+      <div *ngIf="payForm?.errors?.pattern">
+      The CVV does not seem to be valid.
+      </div>
     </div>
   </div>
 </div>
 
-<hr class="my-4">
-<a routerLink="/shipping"><button type="button" class="btn btn-outline-primary me-3">Back</button></a>
-<div class="divider"></div>
-<a routerLink="/summary"><button  class="btn btn-primary" (click)="getPayment()"  formtarget="_blank">Check Out</button></a>
+  <hr class="my-4">
+
+  <a routerLink="/shipping"><button type="button" class="btn btn-outline-primary me-3">Back</button></a>
+  <div class="divider"></div>
+    
+  <div class="float-end">
+    <a  *ngIf="payForm.valid" routerLink="/summary"><button  class="btn btn-primary" type="submit" (click)="onNextClick()" >Check Out</button></a>
+    <button *ngIf="!payForm.valid" type="submit" class="btn btn-primary" disabled>Check Out</button>
+  </div>
+    
+</form>
