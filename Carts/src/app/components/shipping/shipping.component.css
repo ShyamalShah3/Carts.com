@@ -4,6 +4,6 @@
     display:inline-block;
 }
 
-.form-label:after {
+.form-control:after {
     content:" *";
     color: red;}

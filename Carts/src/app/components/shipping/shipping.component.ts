@@ -10,9 +10,8 @@ import { ShippingInfoService } from 'src/app/services/shipping-info.service';
 })
 
 export class ShippingComponent implements OnInit {
-  @Input('ngModel') shipInfo: ShippingInfo;
+  private shipInfo: ShippingInfo;
   @Input('ngModel') shipForm:FormGroup;
-  public validForm:boolean = true;
  
   constructor(private service:ShippingInfoService) { 
     this.shipInfo = service.shippingInfo;

@@ -24,7 +24,7 @@ import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-c
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { ContactUsConfirmationComponent } from './components/contact-us/contact-us-confirmation/contact-us-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { HomeComponent } from './components/home/home.component';
     ContactUsComponent,
     AboutComponent,
     HomeComponent,
+    ContactUsConfirmationComponent,
   ],
   imports: [
     BrowserModule,
