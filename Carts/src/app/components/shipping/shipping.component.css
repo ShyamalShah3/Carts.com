@@ -3,3 +3,7 @@
     height:auto;
     display:inline-block;
 }
+
+.form-label:after {
+    content:" *";
+    color: red;}

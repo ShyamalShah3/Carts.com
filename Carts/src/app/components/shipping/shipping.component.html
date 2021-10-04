@@ -2,12 +2,13 @@
   <h1 class="mb-3">Shipping</h1>
 
     <h3>Shipping Address</h3>
+
     <div class="row">
         <div class="col">
           <label for="ship-street-address" class="form-label">Street Address</label>
-          <input type="text" class="form-control" name="shipStreetAddress" id="ship-street-address" placeholder="1 Bonnyview Avenue" [(ngModel)]="shipInfo.streetAddress" formControlName="shipStreetAddress" required>
-          <div *ngIf="streetAddressForm?.invalid && (streetAddressForm?.dirty || streetAddressForm?.touched)">
-            <div *ngIf="streetAddressForm?.errors?.required">
+          <input type="text" class="form-control" name="shipStreetAddress" id="ship-street-address" placeholder="1 Bonnyview Avenue" formControlName="shipStreetAddress" required>
+          <div *ngIf="streetAddressForm?.invalid && (streetAddressForm?.dirty || streetAddressForm?.touched)" class="text-danger">
+            <div *ngIf="streetAddressForm?.errors?.required" >
               Shipping Street Address is required.
             </div>
             <div *ngIf="streetAddressForm?.errors?.pattern">
@@ -15,43 +16,53 @@
             </div>
           </div>
         </div>
-      
         <div class="col">
           <label for="ship-city" class="form-label">City</label>
-          <input type="text" class="form-control" id="ship-city" placeholder="Sunnyvale" [(ngModel)]="shipInfo.city" required>
-          <div class="invalid-feedback">
-            Shipping City is required
+          <input type="text" class="form-control" id="ship-city" placeholder="Sunnyvale" formControlName="shipCity" required>
+          <div *ngIf="cityForm?.invalid && (cityForm?.dirty || cityForm?.touched)" class="text-danger">
+            <div *ngIf="cityForm?.errors?.required">
+              Shipping City is required.
+            </div>
           </div>
         </div>
-      
+        
+        
         <div class="col">
           <label for="ship-zip-code" class="form-label">Zip/Postal Code</label>
-          <input type="text" class="form-control" id="ship-zip-code" placeholder="B3V" [(ngModel)]="shipInfo.zipCode" required>
-          <div class="invalid-feedback">
-            Shipping Zip/Postal Code is required
+          <input type="text" class="form-control" id="ship-zip-code" placeholder="B3V" formControlName="shipZipCode" required>
+          <div *ngIf="zipCodeForm?.invalid && (zipCodeForm?.dirty || zipCodeForm?.touched)" class="text-danger">
+            <div *ngIf="zipCodeForm?.errors?.required">
+              Shipping Zip/Postal Code is required.
+            </div>
           </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col">
           <label for="ship-state" class="form-label">State/Province/Region</label>
-          <input type="text" class="form-control" id="ship-state" placeholder="Nova Scotia" [(ngModel)]="shipInfo.state" required>
-          <div class="invalid-feedback">
-            Shipping State/Province/Region is required
+          <input type="text" class="form-control" id="ship-state" placeholder="Nova Scotia" formControlName="shipState" required>
+          <div *ngIf="stateForm?.invalid && (stateForm?.dirty || stateForm?.touched)" class="text-danger">
+            <div *ngIf="stateForm?.errors?.required">
+              Shipping State/Province/Region is required.
+            </div>
           </div>
         </div>
       
         <div class="col">
           <label for="ship-country" class="form-label">Country</label>
-          <input type="text" class="form-control" id="ship-country" placeholder="Canada" [(ngModel)]="shipInfo.country" required>
-          <div class="invalid-feedback">
-            Shipping Country is required
+          <input type="text" class="form-control" id="ship-country" placeholder="Canada" formControlName="shipCountry" required>
+          <div *ngIf="countryForm?.invalid && (countryForm?.dirty || countryForm?.touched)" class="text-danger">
+            <div *ngIf="countryForm?.errors?.required">
+              Shipping Country is required.
+            </div>
           </div>
         </div>
 
     </div>
 
     <h3>Shipping Method</h3>
+    
     <div class="row">
         <div class="col">
             <div class="form-check form-check-inline">
@@ -71,9 +82,14 @@
 
     <div class="row">
         <label for="ship-email" class="form-label">Email</label>
-        <input type="text" class="form-control" id="ship-email" placeholder="kittiesLuvBubbles@yahoo.com" [(ngModel)]="shipInfo.emailAddress" required>
-        <div class="invalid-feedback">
-          Email is required for confirmation
+        <input type="text" class="form-control" id="ship-email" placeholder="kittiesLuvBubbles@yahoo.com" formControlName="shipEmail" required>
+        <div *ngIf="emailForm?.invalid && (emailForm?.dirty || emailForm?.touched)" class="text-danger">
+          <div *ngIf="emailForm?.errors?.required">
+            Email is required for confirmation
+          </div>
+          <div *ngIf="emailForm?.errors?.pattern">
+            Email does not seem to be a valid email address.
+          </div>
         </div>
     </div>
 
@@ -81,11 +97,13 @@
 
     <div class="row">
       <div class="col">
-        <a routerLink="/catalog"><button type="button" class="btn btn-outline-primary me-3">Cancel</button></a>
+        <a routerLink="/catalog"><button (click)="onCancelClick()" type="button" class="btn btn-outline-primary me-3">Cancel</button></a>
       </div>
       <div class="col">
-        <a *ngIf="!validForm" routerLink="/payment"><button type="submit" class="btn btn-primary">Next</button></a>
-        <div *ngIf="true" class="button btn btn-primary"><button type="submit" class="btn btn-primary" disabled>Next</button></div>
+        <div class="float-end">
+           <a *ngIf="shipForm.valid" routerLink="/payment"><button (click)="onNextClick()" type="submit" class="btn btn-primary">Next</button></a>
+           <button *ngIf="!shipForm.valid" type="submit" class="btn btn-primary" disabled>Next</button>
+        </div>
       </div>
     </div>
   
