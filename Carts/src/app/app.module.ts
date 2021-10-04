@@ -15,12 +15,13 @@ import { CartComponent } from './components/catalog/cart/cart.component';
 import { CartItemComponent } from './components/catalog/cart/cart-item/cart-item.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { ItemComponent } from './components/catalog/items/item/item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ConfirmationItemComponent } from './components/confirmation/confirmation-item/confirmation-item.component';
 import { SummaryItemsComponent } from './components/summary/summary-items/summary-items.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -42,13 +43,15 @@ import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-c
     ConfirmationItemComponent,
     SummaryItemsComponent,
     ShoppingCartItemComponent,
+    ContactUsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers:[],
 

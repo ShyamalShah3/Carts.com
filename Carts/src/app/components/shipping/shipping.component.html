@@ -1,13 +1,18 @@
-<h1 class="mb-3">Shipping</h1>
-<div class="container">
+<form [formGroup]="shipForm" class="container">
+  <h1 class="mb-3">Shipping</h1>
 
     <h3>Shipping Address</h3>
-    <div class="row gy-3">
+    <div class="row">
         <div class="col">
           <label for="ship-street-address" class="form-label">Street Address</label>
-          <input type="text" class="form-control" id="ship-street-address" placeholder="1 Bonnyview Avenue" [(ngModel)]="shipInfo.streetAddress" required>
-          <div class="invalid-feedback">
-            Shipping Street Address is required
+          <input type="text" class="form-control" name="shipStreetAddress" id="ship-street-address" placeholder="1 Bonnyview Avenue" [(ngModel)]="shipInfo.streetAddress" formControlName="shipStreetAddress" required>
+          <div *ngIf="streetAddressForm?.invalid && (streetAddressForm?.dirty || streetAddressForm?.touched)">
+            <div *ngIf="streetAddressForm?.errors?.required">
+              Shipping Street Address is required.
+            </div>
+            <div *ngIf="streetAddressForm?.errors?.pattern">
+              Shipping Street Address does not seem to be a valid address.
+            </div>
           </div>
         </div>
       
@@ -27,7 +32,7 @@
           </div>
         </div>
     </div>
-    <div class="row gy-3">
+    <div class="row">
         <div class="col">
           <label for="ship-state" class="form-label">State/Province/Region</label>
           <input type="text" class="form-control" id="ship-state" placeholder="Nova Scotia" [(ngModel)]="shipInfo.state" required>
@@ -47,7 +52,7 @@
     </div>
 
     <h3>Shipping Method</h3>
-    <div class="row gy-3">
+    <div class="row">
         <div class="col">
             <div class="form-check form-check-inline">
              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ship-radio-method-1" value="Regular" (change)="onShippingMethodChange($event)" checked>
@@ -64,17 +69,24 @@
         </div>
     </div>
 
-    <div class="row gy-3">
+    <div class="row">
         <label for="ship-email" class="form-label">Email</label>
         <input type="text" class="form-control" id="ship-email" placeholder="kittiesLuvBubbles@yahoo.com" [(ngModel)]="shipInfo.emailAddress" required>
         <div class="invalid-feedback">
           Email is required for confirmation
         </div>
     </div>
-</div>
 
+    <hr class="my-4">
 
-<hr class="my-4">
-<a routerLink="/catalog"><button type="button" class="btn btn-outline-primary me-3">Cancel</button></a>
-<div class="divider"></div>
-<a routerLink="/payment"><button  type="button" class="btn btn-primary">Next</button></a>
+    <div class="row">
+      <div class="col">
+        <a routerLink="/catalog"><button type="button" class="btn btn-outline-primary me-3">Cancel</button></a>
+      </div>
+      <div class="col">
+        <a *ngIf="!validForm" routerLink="/payment"><button type="submit" class="btn btn-primary">Next</button></a>
+        <div *ngIf="true" class="button btn btn-primary"><button type="submit" class="btn btn-primary" disabled>Next</button></div>
+      </div>
+    </div>
+  
+</form>
