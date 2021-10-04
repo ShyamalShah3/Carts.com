@@ -22,6 +22,8 @@ import { ConfirmationItemComponent } from './components/confirmation/confirmatio
 import { SummaryItemsComponent } from './components/summary/summary-items/summary-items.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     SummaryItemsComponent,
     ShoppingCartItemComponent,
     ContactUsComponent,
-
+    AboutComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
