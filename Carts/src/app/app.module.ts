@@ -22,6 +22,7 @@ import { ConfirmationItemComponent } from './components/confirmation/confirmatio
 import { SummaryItemsComponent } from './components/summary/summary-items/summary-items.component';
 import { ShoppingCartItemComponent } from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
 import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -44,8 +45,7 @@ import { AboutComponent } from './components/about/about.component';
     SummaryItemsComponent,
     ShoppingCartItemComponent,
     AboutComponent,
-    
-
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
