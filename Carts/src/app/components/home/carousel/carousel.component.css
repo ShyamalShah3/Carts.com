@@ -12,6 +12,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 0.5em;
+  margin: auto;
 }
 .slide {
   position: absolute;

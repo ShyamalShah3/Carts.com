@@ -1,6 +1,69 @@
 <head>
     <link rel="stylesheet" href="./home.component.css">
+    <!--Font Awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" 
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<div class="container">
-    <app-carousel [slides]="slides"></app-carousel>
- </div>
+<div class="px-4 py-5 my-5 text-center top-of-page">
+    <h1 class="display-5 fw-bold">Welcome To Bubbles Cart Redistribution Network</h1>
+    <div class="container">
+        <app-carousel [slides]="slides"></app-carousel>
+    </div>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"><i>We specialize in providing luxurious shopping carts at a low-cost for all of your business needs.</i></p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3" onClick="document.getElementById('learnMore').scrollIntoView();">Learn More</button>
+        <a href="/catalog"><button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">Go To Catalog</button></a>
+        <a href="/about"><button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">Meet Our People</button></a>
+      </div>
+    </div>
+</div>
+
+<section class="detail">
+    <div id="learnMore" class="container2">
+        <div class="row">
+            <div class="detail-item">
+                <span><i class="fas fa-tools"></i></span>
+                <h2>Hand Crafted</h2>
+                <div class="line"></div>
+                <p class="text">All of our shopping carts are hand crafted by Master Engineer Bubbles 
+                    to ensure customers have a luxurious and efficient shopping experience.</p>
+            </div>
+
+            <div class="detail-item">
+                <span><i class="fab fa-bitcoin"></i></span>
+                <h2>Low Cost</h2>
+                <div class="line"></div>
+                <p class="text">Our efficient manufacturing process guarantees that our shopping carts are available at a low cost, keeping more money in your pockets.</p>
+            </div>
+
+            <div class="detail-item">
+                <span><i class="fab fa-envira"></i></span>
+                <h2>Environmentally Friendly</h2>
+                <div class="line"></div>
+                <p class="text">We are proud to say that Bubbles Cart Redistribution Network is an eco-friendly and zero-emission producing business.
+                    With our sustainable business practices, we ensure that we do not harm the planet we call home.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="b-example-divider"></div>
+<div class="b-example-divider"></div>
+<div class="b-example-divider"></div>
+<div class="b-example-divider"></div>
+
+<!--<div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Dark mode hero</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Custom button</button>
+          <button type="button" class="btn btn-outline-light btn-lg px-4">Secondary</button>
+        </div>
+      </div>
+    </div>
+</div>-->

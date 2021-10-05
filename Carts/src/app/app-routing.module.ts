@@ -12,7 +12,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 
 
 const routes: Routes = [
-{path: '',redirectTo:'/catalog',pathMatch:'full'},
+{path: '',redirectTo:'/home',pathMatch:'full'},
 {path: 'shopping-cart', component: ShoppingCartComponent},
 {path: 'payment', component: PaymentPageComponent},
 {path: 'summary', component:SummaryPageComponent},
