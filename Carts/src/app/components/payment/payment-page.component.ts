@@ -27,7 +27,9 @@ export class PaymentPageComponent implements OnInit {
                                   expDate: new FormControl(this.payInfo.ExpD,[Validators.required,Validators.pattern(expDateRegex)]),
                                   cvv: new FormControl(this.payInfo.cvv,[Validators.required,Validators.pattern(CVVRegex)]),
     });
-    console.log(this.cardNameForm?.value);
+   
+    console.log(this.payForm.touched);
+
   }
 
   ngOnInit(): void {
@@ -38,7 +40,6 @@ export class PaymentPageComponent implements OnInit {
     this.payInfo.CardNum = this.cardNumForm?.value;
     this.payInfo.ExpD = this.cardExpDForm?.value;
     this.payInfo.cvv = this.cardCVVForm?.value;
-
   }
 
   public onNextClick() {
@@ -49,6 +50,7 @@ export class PaymentPageComponent implements OnInit {
     return this.payForm.get("nameOnCard");
   }
   get cardNumForm(){
+
     return this.payForm.get("numOnCard");
   }
   get cardExpDForm(){
