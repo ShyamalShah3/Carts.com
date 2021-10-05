@@ -7,17 +7,6 @@ import { trigger, transition, style, animate } from "@angular/animations";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers: [NgbCarouselConfig],  // add NgbCarouselConfig to the component providers
-  animations: [
-    trigger('carouselAnimation', [
-      transition('void => *', [
-        style({ opacity: 0 }),
-        animate('300ms', style({ opacity: 1 }))
-      ]),
-      transition('* => void', [
-        animate('300ms', style({ opacity: 0 }))
-      ])
-    ])
-  ]
 })
 export class HomeComponent implements OnInit {
   
