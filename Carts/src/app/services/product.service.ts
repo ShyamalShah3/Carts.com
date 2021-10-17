@@ -1,17 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  @Injectable()
-
-  configUrl = "http://localhost:9080/inventory-management/inventory"
 
   products: Product[] = [
     new Product(1, "Two-Tier Cart", "This is a two tier shopping cart.", 100, "https://m.media-amazon.com/images/I/61COlmcV7yL._SL1000_.jpg"),
@@ -22,17 +15,9 @@ export class ProductService {
     new Product(6, "Bubbles", "Bubbles", 9000.0)
   ];
 
-  constructor(private http: HttpClient) {
-    this.getItems()
-  }
+  constructor() {}
   getProducts(): Product[] {
     //To-do: get products from API and return an observable
     return this.products;
-  }
-
-  getItems(){
-    this.http.get(this.configUrl).toPromise().then(data => {
-      console.log(data)
-    });
   }
 }

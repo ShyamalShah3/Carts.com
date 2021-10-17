@@ -27,7 +27,6 @@ import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ContactUsConfirmationComponent } from './components/contact-us/contact-us-confirmation/contact-us-confirmation.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -53,7 +52,6 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     CarouselComponent,
     ContactUsConfirmationComponent,
-    HttpClientModule,
   ],
   imports: [
     BrowserModule,
