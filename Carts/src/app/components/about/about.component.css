@@ -74,35 +74,3 @@ body {
       display: block;
     }
   }
-  /* #### Media Queries ####*/
-@media screen and (min-width: 992px) {
-  .feature .row{
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      align-items: center;
-      column-gap: 2rem;
-  }
-  .feature-right{
-      margin-top: 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  .detail .row{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-  }
-  .detail-item{
-      margin: 0;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .detail .row{
-      grid-template-columns: repeat(3, 1fr);
-  }
-  .detail-item{
-      margin: 0;
-  }
-
-}
