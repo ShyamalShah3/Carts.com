@@ -1,10 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, SystemJsNgModuleLoader } from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+  @Injectable()
 
   products: Product[] = [
     new Product(1, "Two-Tier Cart", "This is a two tier shopping cart.", 100, "https://m.media-amazon.com/images/I/61COlmcV7yL._SL1000_.jpg"),
@@ -15,9 +20,22 @@ export class ProductService {
     new Product(6, "Bubbles", "Bubbles", 9000.0)
   ];
 
-  constructor() {}
+  configUrl="http://localhost:9080/inventory-management/inventory";
+
+  constructor(private http: HttpClient) {
+    this.getData();
+  }
   getProducts(): Product[] {
     //To-do: get products from API and return an observable
     return this.products;
+  }
+
+  getData() {
+    this.http.get(this.configUrl).subscribe((data: any) => {
+      console.log(data);
+      data.forEach((element: any) => {
+        console.log(element.url);
+      });
+    });
   }
 }
