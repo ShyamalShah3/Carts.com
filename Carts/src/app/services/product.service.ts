@@ -13,8 +13,7 @@ export class ProductService {
 
   products: Product[] = [];
 
-  configUrl="http://localhost:9080/inventory-management/inventory";
-
+  configUrl="http://localhost:9080/inventory-management/inventory/getInventory";
   constructor(private http: HttpClient) {
     this.getData();
   }
