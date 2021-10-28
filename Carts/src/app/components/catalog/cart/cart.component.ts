@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
     let itemExists = false;
     let product = addToCart.mProduct;
     for (let i in this.cartItems) {
-      if (this.cartItems[i].productId == product.id){
+      if (this.cartItems[i].productId === product.id){
         if (addToCart.mQty != null && addToCart.mQty > 1) {
           this.cartItems[i].qty += addToCart.mQty;
         } else {
