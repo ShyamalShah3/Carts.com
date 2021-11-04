@@ -48,7 +48,7 @@ export class CatalogToCartService {
    this.mTotal = total;
  }
  
- public removeItem(productId: number) {
+ public removeItem(productId: string) {
   let index = this.mCartItems.map(item => item.productId).indexOf(productId);
   this.mCartItems.splice(index, 1);
   this.getTotal();

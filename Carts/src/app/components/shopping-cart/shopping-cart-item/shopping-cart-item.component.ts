@@ -14,7 +14,7 @@ export class ShoppingCartItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public removeItem(productId: number) {
+  public removeItem(productId: string) {
     this.ctc.removeItem(productId);
   }
 }
