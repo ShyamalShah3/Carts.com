@@ -28,6 +28,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ContactUsConfirmationComponent } from './components/contact-us/contact-us-confirmation/contact-us-confirmation.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignComponent } from './components/sign/sign.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { ContactUsConfirmationComponent } from './components/contact-us/contact-
     HomeComponent,
     CarouselComponent,
     ContactUsConfirmationComponent,
+    LoginComponent,
+    SignComponent,
   ],
   imports: [
     BrowserModule,
