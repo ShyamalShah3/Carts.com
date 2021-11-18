@@ -9,8 +9,7 @@ import { SummaryPageComponent } from './components/summary/summary-page.componen
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignComponent} from './components/sign/sign.component'
+
 const routes: Routes = [
 {path: '',redirectTo:'/home',pathMatch:'full'},
 {path: 'shopping-cart', component: ShoppingCartComponent},
@@ -22,8 +21,7 @@ const routes: Routes = [
 {path: 'about', component: AboutComponent},
 {path: 'home', component: HomeComponent},
 {path: 'contact-us', component: ContactUsComponent},
-{path: 'login', component: LoginComponent},
-{path: 'sign', component: SignComponent}
+
 ];
 
 @NgModule({
